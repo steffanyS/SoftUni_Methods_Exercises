@@ -7,20 +7,19 @@ public class Substring_broken
 		string text = Console.ReadLine();
 		int jump = int.Parse(Console.ReadLine());
 
-		const char Search = 'р';
 		bool hasMatch = false;
 
 		for (int i = 0; i < text.Length; i++)
 		{
-			if (text[i] == Search)
+			if (text[i] == 'p')
 			{
 				hasMatch = true;
 
-				int endIndex = jump+i;
+				int endIndex = jump+1;
 
-				if (endIndex > text.Length)
+				if (endIndex+i > text.Length)
 				{
-					endIndex = text.Length;
+					endIndex = text.Length-i;
 				}
 
 				string matchedString = text.Substring(i, endIndex);
